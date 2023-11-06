@@ -1,7 +1,12 @@
 import './App.module.css'
+import Container from './components/Container'
 
-function App() {
-  return <p>Hello World!</p>
+const App = () => {
+  return (
+    <>
+      <Container />
+    </>
+  )
 }
 
 export default App
