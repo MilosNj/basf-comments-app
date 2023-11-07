@@ -1,0 +1,33 @@
+.comment_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 18px;
+}
+
+.text_input {
+  color: #82878d;
+  padding-left: 20px;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 100%;
+}
+
+.send_button {
+  margin-right: 15px;
+  width: 79px;
+  height: 34px;
+  border-radius: 5px;
+  background: #d9d9d9;
+  text-align: center;
+  font-size: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
