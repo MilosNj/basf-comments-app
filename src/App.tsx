@@ -3,11 +3,7 @@ import styles from './App.module.css'
 import CommentForm from './components/CommentForm/CommentForm'
 import CommentList from './components/CommentList/CommentList'
 import useFormattedDate from './hooks/useFormattedDate'
-
-interface CommentData {
-  author: string
-  text: string
-}
+import { CommentProps as CommentData } from './components/Comment/Comment'
 
 const App = () => {
   const [comments, setComments] = useState<CommentData[]>([])
@@ -20,8 +16,10 @@ const App = () => {
   return (
     <>
       <div className={styles.app}>
-        <p>{formattedDate}</p>
-        <CommentList comments={comments} />
+        <p className={styles.formatted_date}>{formattedDate}</p>
+        <div className={styles.comment_list_wrapper}>
+          <CommentList comments={comments} />
+        </div>
         <CommentForm onAddComment={addComment} />
       </div>
     </>
@@ -29,3 +27,4 @@ const App = () => {
 }
 
 export default App
+// TODO: Reply funkcionalnost; Renderovanje linkova u komentaru; stilizovanje komentara

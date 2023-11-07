@@ -1,23 +1,30 @@
 import { useState } from 'react'
 import styles from './CommentForm.module.css'
-
-interface CommentData {
-  author: string
-  text: string
-}
+import { getCurrentTime } from '../../utils/helpers'
+import { CommentProps as CommentData } from '../Comment/Comment'
 
 interface CommentFormProps {
   onAddComment: (comment: CommentData) => void
 }
 
 const CommentForm = ({ onAddComment }: CommentFormProps) => {
-  const [author, setAuthor] = useState('')
+  const [authorName, setAuthorName] = useState('')
+  const [authorPicture, setAuthorPicture] = useState('')
   const [text, setText] = useState('')
+  const [isReply, setIsReply] = useState(false)
 
   const handleAddComment = () => {
-    onAddComment({ author, text })
-    setAuthor('')
+    onAddComment({
+      author: { name: authorName, picture: authorPicture },
+      text,
+      timestamp: getCurrentTime(),
+      isReply,
+      id: 'generateThis'
+    })
+    setAuthorName('')
+    setAuthorPicture('')
     setText('')
+    setIsReply(false)
   }
 
   return (
@@ -26,8 +33,8 @@ const CommentForm = ({ onAddComment }: CommentFormProps) => {
         className={styles.text_input}
         type='text'
         placeholder='Your Name'
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
+        value={authorName}
+        onChange={(e) => setAuthorName(e.target.value)}
       />
       <input
         className={styles.text_input}

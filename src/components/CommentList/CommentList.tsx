@@ -1,20 +1,22 @@
-import Comment from '../Comment/Comment'
+import Comment, { CommentProps } from '../Comment/Comment'
 import styles from './CommentList.module.css'
 
-interface CommentData {
-  author: string
-  text: string
-}
-
 interface CommentListProps {
-  comments: CommentData[]
+  comments: CommentProps[]
 }
 
 const CommentList = ({ comments }: CommentListProps) => {
   return (
     <div className={styles.comment_list}>
-      {comments.map((comment, index) => (
-        <Comment key={index} author={comment.author} text={comment.text} />
+      {comments.map((comment) => (
+        <Comment
+          key={comment.id}
+          id={comment.id}
+          author={comment.author}
+          text={comment.text}
+          timestamp={comment.timestamp}
+          isReply={comment.isReply}
+        />
       ))}
     </div>
   )

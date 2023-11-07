@@ -20,10 +20,22 @@ p {
   background-color: #eceef1;
   width: 80vw;
   height: 70vh;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 18px;
+}
+
+.formatted_date {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.comment_list_wrapper {
+  margin-bottom: 18px;
+  align-items: flex-start;
+  width: 70vw;
+  height: 408px;
+  overflow: auto;
 }
