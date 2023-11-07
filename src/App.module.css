@@ -4,13 +4,26 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Inter, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
 }
 
 p {
   color: #1e1e1e;
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.app {
+  background-color: #eceef1;
+  width: 80vw;
+  height: 70vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
 }
