@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import styles from './CommentForm.module.css'
 import { getCurrentTime } from '../../utils/helpers'
 import { CommentProps as CommentData } from '../Comment/Comment'
@@ -8,8 +9,8 @@ interface CommentFormProps {
 }
 
 const CommentForm = ({ onAddComment }: CommentFormProps) => {
-  const [authorName, setAuthorName] = useState('')
-  const [authorPicture, setAuthorPicture] = useState('')
+  const [authorName] = useState('Anonymous') // this would be fetched from the DB
+  const [authorPicture] = useState('src/assets/moci.jpg') // this would be fetched from the DB
   const [text, setText] = useState('')
   const [isReply, setIsReply] = useState(false)
 
@@ -19,23 +20,14 @@ const CommentForm = ({ onAddComment }: CommentFormProps) => {
       text,
       timestamp: getCurrentTime(),
       isReply,
-      id: 'generateThis'
+      id: uuidv4()
     })
-    setAuthorName('')
-    setAuthorPicture('')
     setText('')
     setIsReply(false)
   }
 
   return (
     <div className={styles.comment_form}>
-      <input
-        className={styles.text_input}
-        type='text'
-        placeholder='Your Name'
-        value={authorName}
-        onChange={(e) => setAuthorName(e.target.value)}
-      />
       <input
         className={styles.text_input}
         type='text'

@@ -1,3 +1,24 @@
 .comment {
   color: red;
+  display: flex;
+}
+
+.profile_picture {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.author_text {
+  width: 493px;
+  height: 85px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.comment_wrapper {
+  margin-left: 10px;
 }

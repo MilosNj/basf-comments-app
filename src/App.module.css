@@ -35,7 +35,7 @@ p {
 .comment_list_wrapper {
   margin-bottom: 18px;
   align-items: flex-start;
-  width: 70vw;
+  width: 75vw;
   height: 408px;
   overflow: auto;
 }
