@@ -1,3 +1,5 @@
+// @ts-expect-error There is no TS support for this package
+import AutoLinkText from 'react-autolink-text2'
 import styles from './Comment.module.css'
 
 type Author = {
@@ -30,12 +32,27 @@ const Comment = ({
       />
       <div className={styles.comment_wrapper}>
         <div className={styles.author_text}>
-          <h4>{author.name}</h4>
-          <p>{text}</p>
+          <h4 className={styles.name}>{author.name}</h4>
+          <AutoLinkText
+            className={styles.text}
+            text={text}
+            linkProps={{
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              style: {
+                color: '#023168',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal'
+              }
+            }}
+          />
         </div>
         <div className={styles.timestamp_reply}>
-          <p>{timestamp}</p>
-          <button>Reply</button>
+          <p className={styles.timestamp}>{timestamp}</p>
+          <button className={styles.reply_button}>Reply</button>
         </div>
       </div>
       {/* TODO: Add a reply button */}

@@ -29,6 +29,8 @@ const CommentForm = ({ onAddComment }: CommentFormProps) => {
   return (
     <div className={styles.comment_form}>
       <input
+        name='comment'
+        maxLength={200}
         className={styles.text_input}
         type='text'
         placeholder='...type something'

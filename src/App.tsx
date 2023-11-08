@@ -27,4 +27,4 @@ const App = () => {
 }
 
 export default App
-// TODO: Reply funkcionalnost; Renderovanje linkova u komentaru; stilizovanje komentara
+// TODO: Reply funkcionalnost.
