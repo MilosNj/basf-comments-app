@@ -1,11 +1,11 @@
-import Comment, { CommentProps } from '../Comment/Comment'
+import { useContext } from 'react'
+import Comment from '../Comment/Comment'
 import styles from './CommentList.module.css'
+import { CommentsContext } from '../../context/store'
 
-interface CommentListProps {
-  comments: CommentProps[]
-}
+const CommentList = () => {
+  const { comments } = useContext(CommentsContext)
 
-const CommentList = ({ comments }: CommentListProps) => {
   return (
     <div className={styles.comment_list}>
       {comments.map((comment) => (
@@ -15,7 +15,7 @@ const CommentList = ({ comments }: CommentListProps) => {
           author={comment.author}
           text={comment.text}
           timestamp={comment.timestamp}
-          isReply={comment.isReply}
+          parent_id={comment.parent_id}
         />
       ))}
     </div>

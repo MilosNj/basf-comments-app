@@ -3,6 +3,14 @@
   margin-top: 30px;
 }
 
+.comment_reply {
+  margin-left: 50px;
+}
+
+.comment_reply + .comment_reply {
+  margin-left: calc(50px + 50px);
+}
+
 .profile_picture {
   width: 45px;
   height: 45px;
