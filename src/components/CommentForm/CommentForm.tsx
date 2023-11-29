@@ -7,9 +7,10 @@ import { CommentProps as CommentData } from '../Comment/Comment'
 
 interface CommentFormProps {
   parent_id?: string
+  onHideReply?: () => void
 }
 
-const CommentForm = ({ parent_id }: CommentFormProps) => {
+const CommentForm = ({ parent_id, onHideReply }: CommentFormProps) => {
   const [authorName] = useState('Anonymous') // this would be fetched from the DB
   const [authorPicture] = useState('src/assets/moci.jpg') // this would be fetched from the DB
   const [text, setText] = useState('')
@@ -30,6 +31,9 @@ const CommentForm = ({ parent_id }: CommentFormProps) => {
 
     setComments((prevComments) => [...prevComments, newComment])
     setText('')
+    if (onHideReply) {
+      onHideReply()
+    }
   }
 
   return (

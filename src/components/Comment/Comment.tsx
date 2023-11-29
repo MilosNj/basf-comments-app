@@ -61,7 +61,9 @@ const Comment = ({ id, author, text, timestamp, parent_id }: CommentProps) => {
           </button>
         </div>
       </div>
-      {replying && <CommentForm parent_id={id} />}
+      {replying && (
+        <CommentForm parent_id={id} onHideReply={() => setReplying(false)} />
+      )}
     </div>
   )
 }
